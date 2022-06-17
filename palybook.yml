@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: true
+  tasks:
+   - name: To install ansible 
+     yum:
+      name: ansilbe
+      state: latest
+    
+   - name: To install docker 
+     yum: 
+      name: docker
+      state: latest
+
+   - name: tomcat container
+     docker_container:
+      name: tomcat
+      image: pardubolloju/gcp:{{docker_tag}}
+      state: present
+      exposed_ports:
+        - 0.0.0.0:8080:8080
