@@ -4,7 +4,7 @@
   tasks:
    - name: To install ansible 
      yum:
-      name: ansilbe
+      name: ansible
       state: latest
     
    - name: To install docker 
