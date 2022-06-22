@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: deployment
+metadata:
+ name: tomcat-deployment
+ lables:
+  app: tomcat
+spec: 
+ replicas: 3
+ selector:
+  matchLables:
+   app: tomcat
+ template:
+  metadata:
+   lables:
+    app: tomcat
+  spec:
+   containers:
+    - name: tomcat
+      image: pardubolloju/gcp:tagversion
+      ports:
+       - containerPort: 8080
