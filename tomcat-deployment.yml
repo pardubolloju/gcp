@@ -16,6 +16,6 @@ spec:
   spec:
    containers:
     - name: tomcat
-      image: pardubolloju/gcp:tagversion
+      image: pardubolloju/testing:tagversion
       ports:
        - containerPort: 8080
